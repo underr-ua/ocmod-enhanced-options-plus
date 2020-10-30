@@ -5,6 +5,7 @@ The Flexible Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply 
 
 ## Features
 * Applies product specials and discounts to its options
+* Displays option prices in the cart
 * Displays ~~previous~~ option prices next to current prices
 * OCMOD/Event System - does not change core files
 
