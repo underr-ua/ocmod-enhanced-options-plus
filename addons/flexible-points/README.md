@@ -8,4 +8,4 @@ The Flexible Points is an add-on for Flexible Options+ module. It allows to appl
 * OCMOD - does not change core files
 
 ## License
-[End-User License Agreement](https://git.io/JUVfI)
+* [MIT License](https://git.io/JTScM)

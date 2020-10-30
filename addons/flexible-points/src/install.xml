@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is part of "Flexible Options+" project and subject to the terms
+and conditions defined in file "LICENSE.txt", which is part of this source
+code package and also available on the project page: https://git.io/JTScM.
+-->
+
+<modification>
+	<name>[underr] Flexible Options+ > Points</name>
+	<code>flexible-points</code>
+	<version>1.0.0</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://git.io/JUVfk</link>
+
+	<file path="system/library/cart/cart.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[$reward * $cart['quantity']]]>
+			</search>
+			<add position="replace"><![CDATA[$reward * $cart['quantity'] * $co]]></add>
+		</operation>
+		<operation error="log">
+			<search>
+				<![CDATA[($product_query->row['points'] + $option_points)]]>
+			</search>
+			<add position="replace"><![CDATA[($product_query->row['points'] + $option_points) * $co]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/model/catalog/product.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[$query = $this->db->query("SELECT DISTINCT *]]>
+			</search>
+			<add position="after">
+				<![CDATA[		/// Flexible Points
+		$co = 1;
+
+		if ($query->num_rows && $this->config->get('module_flexible_options_status')) {
+			$price = ($query->row['discount'] ? $query->row['discount'] : $query->row['price']);
+
+			if ($query->row['special']) {
+				$co = $query->row['special'] / $price;
+			}
+		}]]>
+			</add>
+		</operation>
+		<operation error="log">
+			<search>
+				<![CDATA[$query->row['reward'],]]>
+			</search>
+			<add position="replace">
+				<![CDATA[$query->row['reward'] * $co,  /// Flexible Points]]>
+			</add>
+		</operation>
+		<operation error="log">
+			<search>
+				<![CDATA[$query->row['points'],]]>
+			</search>
+			<add position="replace">
+				<![CDATA[$query->row['points'] * $co, 	/// Flexible Points]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/model/catalog/product.php" error="log">
+		<operation error="log">
+			<ignoreif regex="false" info=""><![CDATA[=> $product_option_value['points']]]></ignoreif>
+			<search>
+				<![CDATA[$product_option_value['price_prefix'],]]>
+			</search>
+			<add position="after">
+				<![CDATA[						'points'                   => $product_option_value['points'],  /// Flexible Options+
+						'points_prefix'                   => $product_option_value['points_prefix'],  /// Flexible Options+]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/product.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[=> $this->model_tool_image->resize($option_value['image'], 50, 50),]]>
+			</search>
+			<add position="after">
+				<![CDATA[							'points'                  => $option_value['points'],  /// Flexible Points
+							'points_prefix'           => $option_value['points_prefix'],  /// Flexible Points]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/extension/module/flexible_options.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value['price'] *= $co;]]>
+			</search>
+			<add position="after">
+				<![CDATA[						/// Flexible Points
+						if ($option_value['points'] && 1 != $co) {
+							$option_value['points'] *= $co;
+						}]]>
+			</add>
+		</operation>
+	</file>
+
+<!-- FIX -->
+	<!-- <file path="admin/controller/extension/payment/free_checkout.php" error="log">
+		<operation error="log">
+			<ignoreif regex="false" info=""><![CDATA[payment_free_checkout_order_status_id]]></ignoreif>
+			<search>
+				<![CDATA[free_checkout_order_status_id]]>
+			</search>
+			<add position="replace">
+				<![CDATA[payment_free_checkout_order_status_id]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="admin/view/template/extension/payment/free_checkout.twig" error="log">
+		<operation error="log">
+			<ignoreif regex="false" info=""><![CDATA[payment_free_checkout_order_status_id]]></ignoreif>
+			<search>
+				<![CDATA[free_checkout_order_status_id]]>
+			</search>
+			<add position="replace">
+				<![CDATA[payment_free_checkout_order_status_id]]>
+			</add>
+		</operation>
+	</file> -->
+</modification>
