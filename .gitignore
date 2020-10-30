@@ -13,4 +13,3 @@ makefile
 *.php_cs
 *.pwd
 *.zip
-src
