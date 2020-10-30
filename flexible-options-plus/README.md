@@ -1,12 +1,11 @@
 # Flexible Options+
-The Flexible Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply product special offers and discounts to its options.
 
 ## Description
-The Flexible Options+ extension is for Opencart 3 CMS.
+The Flexible Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply product special offers and discounts to its options.
 
 ## Features
 * Applies product specials and discounts to its options
-* Can display ~~previous~~ option prices next to sale prices
+* Displays ~~previous~~ option prices next to current prices
 * OCMOD/Event System - does not change core files
 
 ## Live demo
@@ -14,7 +13,7 @@ The Flexible Options+ extension is for Opencart 3 CMS.
 * [Front](http://ocmod.freevar.com/oc3020/a)
 
 ## License
-[End-User License Agreement](https://git.io/JUVfI)
+* [End-User License Agreement](https://git.io/JUVfI)
 
 ## Links
 * [Opencart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40391)
