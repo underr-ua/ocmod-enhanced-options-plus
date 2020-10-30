@@ -13,7 +13,7 @@ The Flexible Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply 
 * [Front](http://ocmod.freevar.com/oc3020/a)
 
 ## License
-* [End-User License Agreement](https://git.io/JUVfI)
+* [End-User License Agreement](https://git.io/JTScw)
 
 ## Links
 * [Opencart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40391)
