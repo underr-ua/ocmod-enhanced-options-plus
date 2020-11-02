@@ -1,5 +1,11 @@
 # Change log
 
+## [1.1.0] - 2020-11-02:
+### Fixed
+- Compatibility with the "Category Specials+" module
+### Internal
+- Beautify
+
 ## [1.0.1] - 2020-10-30:
 ### Internal
 - Code and logic improvements
