@@ -21,4 +21,6 @@ The Flexible Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply 
 * [GitHub](https://git.io/JUVfk)
 
 ## Related modules and extensions
+[Live Product+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
+[Live Product Ultimate](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
 [Category Specials+ (Category Based Special Offers)](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40385)
