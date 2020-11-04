@@ -8,8 +8,8 @@ code package and also available on the project page: https://git.io/JTScM.
 
 <modification>
 	<name>[underr] Flexible Options+ > Points</name>
-	<code>flexible-points</code>
-	<version>1.0.0</version>
+	<code>flexible-options-points</code>
+	<version>1.0.1</version>
 	<author>Andrii Burkatskyi aka underr</author>
 	<link>https://git.io/JUVfk</link>
 
@@ -51,7 +51,7 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[$query->row['reward'],]]>
 			</search>
 			<add position="replace">
-				<![CDATA[$query->row['reward'] * $co,  /// Flexible Points]]>
+				<![CDATA[round($query->row['reward'] * $co),  /// Flexible Points]]>
 			</add>
 		</operation>
 		<operation error="log">
@@ -59,7 +59,7 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[$query->row['points'],]]>
 			</search>
 			<add position="replace">
-				<![CDATA[$query->row['points'] * $co, 	/// Flexible Points]]>
+				<![CDATA[round($query->row['points'] * $co), 	/// Flexible Points]]>
 			</add>
 		</operation>
 	</file>
