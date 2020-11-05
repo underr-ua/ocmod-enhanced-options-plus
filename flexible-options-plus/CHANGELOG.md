@@ -1,5 +1,9 @@
 # Change log
 
+## [1.1.1] - 2020-11-05:
+### Fixed
+- Displaying select options with no prices
+
 ## [1.1.0] - 2020-11-02:
 ### Fixed
 - Compatibility with the "Category Specials+" module
