@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-This file is part of "Flexible Options+" project and subject to the terms
+This file is part of "Enhanced Options+" project and subject to the terms
 and conditions defined in file "LICENSE.txt", which is part of this source
 code package and also available on the project page: https://git.io/JTScM.
 -->
 
 <modification>
-	<name>[underr] Flexible Options+ > Points</name>
-	<code>flexible-options-points</code>
+	<name>[underr] Enhanced Options+ > Points</name>
+	<code>enhanced-options-points</code>
 	<version>1.0.1</version>
 	<author>Andrii Burkatskyi aka underr</author>
 	<link>https://git.io/JUVfk</link>
@@ -34,10 +34,10 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[$query = $this->db->query("SELECT DISTINCT *]]>
 			</search>
 			<add position="after">
-				<![CDATA[		/// Flexible Points
+				<![CDATA[		/// Enhanced Points
 		$co = 1;
 
-		if ($query->num_rows && $this->config->get('module_flexible_options_status')) {
+		if ($query->num_rows && $this->config->get('module_enhanced_options_status')) {
 			$price = ($query->row['discount'] ? $query->row['discount'] : $query->row['price']);
 
 			if ($query->row['special']) {
@@ -51,7 +51,7 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[$query->row['reward'],]]>
 			</search>
 			<add position="replace">
-				<![CDATA[round($query->row['reward'] * $co),  /// Flexible Points]]>
+				<![CDATA[round($query->row['reward'] * $co),  /// Enhanced Points]]>
 			</add>
 		</operation>
 		<operation error="log">
@@ -59,7 +59,7 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[$query->row['points'],]]>
 			</search>
 			<add position="replace">
-				<![CDATA[round($query->row['points'] * $co), 	/// Flexible Points]]>
+				<![CDATA[round($query->row['points'] * $co), 	/// Enhanced Points]]>
 			</add>
 		</operation>
 	</file>
@@ -71,8 +71,8 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[$product_option_value['price_prefix'],]]>
 			</search>
 			<add position="after">
-				<![CDATA[						'points'                   => $product_option_value['points'],  /// Flexible Options+
-						'points_prefix'                   => $product_option_value['points_prefix'],  /// Flexible Options+]]>
+				<![CDATA[						'points'                   => $product_option_value['points'],  /// Enhanced Options+
+						'points_prefix'                   => $product_option_value['points_prefix'],  /// Enhanced Options+]]>
 			</add>
 		</operation>
 	</file>
@@ -83,19 +83,19 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[=> $this->model_tool_image->resize($option_value['image'], 50, 50),]]>
 			</search>
 			<add position="after">
-				<![CDATA[							'points'                  => $option_value['points'],  /// Flexible Points
-							'points_prefix'           => $option_value['points_prefix'],  /// Flexible Points]]>
+				<![CDATA[							'points'                  => $option_value['points'],  /// Enhanced Points
+							'points_prefix'           => $option_value['points_prefix'],  /// Enhanced Points]]>
 			</add>
 		</operation>
 	</file>
 
-	<file path="catalog/controller/extension/module/flexible_options.php" error="log">
+	<file path="catalog/controller/extension/module/enhanced_options.php" error="log">
 		<operation error="log">
 			<search>
 				<![CDATA[$option_value['price'] *= $co;]]>
 			</search>
 			<add position="after">
-				<![CDATA[						/// Flexible Points
+				<![CDATA[						/// Enhanced Points
 						if ($option_value['points'] && 1 != $co) {
 							$option_value['points'] *= $co;
 						}]]>

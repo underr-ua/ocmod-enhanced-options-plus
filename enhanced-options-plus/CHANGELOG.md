@@ -1,5 +1,15 @@
 # Change log
 
+## [1.2.0] - 2020-11-17:
+### Changed
+- Renamed to Enhanced Options+
+### Added
+- Text notices for options satisfying some conditions
+
+## [1.1.2] - 2020-11-06:
+### Internal
+- Minor improvements
+
 ## [1.1.1] - 2020-11-05:
 ### Fixed
 - Displaying select options with no prices
