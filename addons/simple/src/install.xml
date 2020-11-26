@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is part of "Enhanced Options+" project and subject to the terms
+and conditions defined in file "LICENSE.txt", which is part of this source
+code package and also available on the project page: https://git.io/JTScM.
+-->
+
+<modification>
+	<name>[underr] Compatibility: Enhanced Options+ > Simple</name>
+	<code>enhanced-options--simple</code>
+	<version>1.0.0</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://git.io/JUVfk</link>
+
+	<file path="catalog/controller/checkout/{simplecheckout,simplecheckout_cart,simplecheckout_summary}.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[$value = $option['value'];]]>
+			</search>
+			<add position="after">
+				<![CDATA[						/// <<< Enhanced Options+
+						if ($this->customer->isLogged() || !$this->config->get('config_customer_price') &&
+							$this->config->get('module_enhanced_options_status') &&
+							$this->config->get('module_enhanced_options')['notice']
+						) {
+							$value_description = '';
+
+							if ($option['type'] === 'checkbox' || $option['type'] === 'radio' || $option['type'] === 'select') {
+								if ((float)$option['price']) {
+									$value_description = $this->currency->format($this->tax->calculate($option['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+									$value_description = $option['price_prefix'] === '=' ? $value_description : $option['price_prefix'] . $value_description;
+
+									if (0 == $option['quantity'] && !$option['subtract']) {
+										$value_description .= $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['preorder'];
+									}
+								} else {
+									if ('=' === $option['price_prefix']) {
+										$value_description = $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['free'];
+									}
+								}
+							}
+						}
+
+						$value = $option['value'] . (!empty($value_description) ?  ' (' . $value_description . ')' : '');
+						/// Enhanced Options+ >>>]]>
+			</add>
+		</operation>
+
+	</file>
+
+	<file path="catalog/controller/checkout/{simplecheckout_cart,simplecheckout_summary}.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[(utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)]]>
+			</search>
+			<add position="replace">
+				<![CDATA[(utf8_strlen($value) > 50 ? utf8_substr($value, 0, 50) . '..' : $value)]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/common/simple_connector.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[foreach ($product['option'] as $option) {]]>
+			</search>
+			<add position="after">
+				<![CDATA[							/// <<< Enhanced Options+
+							if ($this->config->get('module_enhanced_options_status') &&
+								$this->config->get('module_enhanced_options')['notice'] &&
+								$option['price']
+							) {
+								$value_description = '';
+
+								if ((float)$option['price']) {
+									$value_description = $this->currency->format($this->tax->calculate($option['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+									$value_description = $option['price_prefix'] === '=' ? $value_description : $option['price_prefix'] . $value_description;
+
+									if (0 == $option['quantity'] && !$option['subtract']) {
+										$value_description .= $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['preorder'];
+									}
+								} else {
+									if ('=' === $option['price_prefix']) {
+										$value_description = $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['free'];
+									}
+								}
+							}
+							/// Enhanced Options+ >>>]]>
+			</add>
+		</operation>
+		<operation error="log">
+			<search>
+				<![CDATA[$message .= '- ' . $option['name'] . ': ' . $option['value'] . "\n";]]>
+			</search>
+			<add position="replace">
+				<![CDATA[$message .= '- ' . $option['name'] . ': ' . $option['value'] . (!empty($value_description) ?  ' (' . $value_description . ')' : '') . "\n";]]>
+			</add>
+		</operation>
+	</file>
+</modification>
