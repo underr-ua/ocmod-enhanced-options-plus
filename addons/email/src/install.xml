@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is part of "Enhanced Options+" project and subject to the terms
+and conditions defined in file "LICENSE.txt", which is part of this source
+code package and also available on the project page: https://git.io/JTScM.
+-->
+
+<modification>
+	<name>[underr] Compatibility: Enhanced Options+ > OC email</name>
+	<code>enhanced-options--email</code>
+	<version>1.0.0</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://git.io/JUVfk</link>
+
+	<file path="catalog/controller/mail/order.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[(utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)]]>
+			</search>
+			<add position="replace">
+				<![CDATA[(utf8_strlen($value) > 50 ? utf8_substr($value, 0, 50) . '..' : $value)]]>
+			</add>
+		</operation>
+
+	</file>
+</modification>
