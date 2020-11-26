@@ -1,4 +1,4 @@
 # Compatibility addon for UltraStore template
 
 ## License
-* [MIT License](https://git.io/JTScM)
+* [MIT License](https://git.io/JkQti)
