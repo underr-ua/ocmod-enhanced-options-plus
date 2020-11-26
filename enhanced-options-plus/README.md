@@ -7,7 +7,7 @@ The Enhanced Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply 
 * Applies product specials and discounts to its options
 * Displaying option prices in the cart
 * Displaying ~~previous~~ option prices next to current prices
-* Displaying text notices for options satisfying some conditions:
+* Displaying text notifications for options satisfying some conditions:
   - for options that have no price but are prefixed with an equal sign (ex. Free, Gift)
   - for options that have no quantity but are not subtracted (ex. Preorder)
 
