@@ -5,6 +5,7 @@ The Enhanced Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply 
 
 ## Features
 * Applies product specials and discounts to its options
+* Flat rate options (such option calculated only once, regardless of product quantity)
 * Displaying option prices in the cart
 * Displaying ~~previous~~ option prices next to current prices
 * Displaying text notifications for options satisfying some conditions:
@@ -29,7 +30,3 @@ The Enhanced Options+ extension is for Opencart CMS 2.x/3.x, it allows to apply 
 * [Opencart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40391)
 * [GitHub](https://git.io/JklFz)
 
-## Related modules and extensions
-[Live Product+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
-[Live Product Ultimate](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
-[Category Specials+ (Category Based Special Offers)](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40385)

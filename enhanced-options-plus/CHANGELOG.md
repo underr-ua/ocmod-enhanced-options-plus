@@ -1,5 +1,11 @@
 # Change log
 
+## [1.3.0] - 2020-12-18:
+### Added
+- Flat rate options
+### Changed
+- Moudele settings
+
 ## [1.2.1] - 2020-11-26:
 ### Fixed
 - Minor fixes
