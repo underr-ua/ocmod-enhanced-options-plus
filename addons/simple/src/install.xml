@@ -3,7 +3,7 @@
 <!--
 This file is part of "Enhanced Options+" project and subject to the terms
 and conditions defined in file "LICENSE.txt", which is part of this source
-code package and also available on the project page: https://git.io/JTScM.
+code package and also available on the project page: https://git.io/JtVdv.
 -->
 
 <modification>
@@ -11,7 +11,7 @@ code package and also available on the project page: https://git.io/JTScM.
 	<code>enhanced-options--simple</code>
 	<version>1.0.0</version>
 	<author>Andrii Burkatskyi aka underr</author>
-	<link>https://git.io/JUVfk</link>
+	<link>https://git.io/JtVdv</link>
 
 	<file path="catalog/controller/checkout/{simplecheckout,simplecheckout_cart,simplecheckout_summary}.php" error="log">
 		<operation error="log">
