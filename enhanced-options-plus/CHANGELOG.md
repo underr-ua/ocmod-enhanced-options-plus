@@ -1,5 +1,9 @@
 # Change log
 
+## [1.3.2] - 2021-02-08:
+### Fixed
+- Minor language issues
+
 ## [1.3.1] - 2021-02-04:
 ### Internal
 - Improved compatibility
