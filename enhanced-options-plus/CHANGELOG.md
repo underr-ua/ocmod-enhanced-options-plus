@@ -1,5 +1,9 @@
 # Change log
 
+## [1.4.0] - 2021-02-26:
+### Internal
+- Rearranged events and functions
+
 ## [1.3.2] - 2021-02-08:
 ### Fixed
 - Minor language issues
