@@ -20,6 +20,7 @@ code package and also available on the project page: https://git.io/JtV5h.
 			</search>
 			<add position="replace"><![CDATA[$reward * $cart['quantity'] * $co]]></add>
 		</operation>
+
 		<operation error="log">
 			<search>
 				<![CDATA[($product_query->row['points'] + $option_points)]]>
@@ -46,6 +47,7 @@ code package and also available on the project page: https://git.io/JtV5h.
 		}]]>
 			</add>
 		</operation>
+
 		<operation error="log">
 			<search>
 				<![CDATA[$query->row['reward'],]]>
@@ -54,6 +56,7 @@ code package and also available on the project page: https://git.io/JtV5h.
 				<![CDATA[round($query->row['reward'] * $co),  /// Enhanced Points]]>
 			</add>
 		</operation>
+
 		<operation error="log">
 			<search>
 				<![CDATA[$query->row['points'],]]>
