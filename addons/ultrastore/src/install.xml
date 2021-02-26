@@ -9,7 +9,7 @@ code package and also available on the project page: https://git.io/JTScM.
 <modification>
 	<name>[underr] Compatibility: Enhanced Options+ > UltraStore</name>
 	<code>enhanced-options--ultrastore</code>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<author>Andrii Burkatskyi aka underr</author>
 	<link>https://git.io/JUVfk</link>
 
@@ -22,7 +22,7 @@ code package and also available on the project page: https://git.io/JTScM.
 				<![CDATA[						/// <<< Enhanced Options+
 						if ($this->customer->isLogged() || !$this->config->get('config_customer_price') &&
 							$this->config->get('module_enhanced_options_status') &&
-							$this->config->get('module_enhanced_options')['notice']
+							$this->config->get('module_enhanced_options')['notices]
 						) {
 							$value_description = '';
 
