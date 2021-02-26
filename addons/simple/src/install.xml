@@ -25,6 +25,7 @@ code package and also available on the project page: https://git.io/JtVdv.
 							$this->config->get('module_enhanced_options')['notices]
 						) {
 							$value_description = '';
+							$text = $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')];
 
 							if ($option['type'] === 'checkbox' || $option['type'] === 'radio' || $option['type'] === 'select') {
 								if ((float)$option['price']) {
@@ -32,11 +33,11 @@ code package and also available on the project page: https://git.io/JtVdv.
 									$value_description = $option['price_prefix'] === '=' ? $value_description : $option['price_prefix'] . $value_description;
 
 									if (0 == $option['quantity'] && !$option['subtract']) {
-										$value_description .= $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['preorder'];
+										$value_description .= $text['preordered_option'];
 									}
 								} else {
 									if ('=' === $option['price_prefix']) {
-										$value_description = $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['free'];
+										$value_description = $text['free_option'];
 									}
 								}
 							}
@@ -72,17 +73,18 @@ code package and also available on the project page: https://git.io/JtVdv.
 								$option['price']
 							) {
 								$value_description = '';
+								$text = $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')];
 
 								if ((float)$option['price']) {
 									$value_description = $this->currency->format($this->tax->calculate($option['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 									$value_description = $option['price_prefix'] === '=' ? $value_description : $option['price_prefix'] . $value_description;
 
 									if (0 == $option['quantity'] && !$option['subtract']) {
-										$value_description .= $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['preorder'];
+										$value_description .= $text['preordered_option'];
 									}
 								} else {
 									if ('=' === $option['price_prefix']) {
-										$value_description = $this->config->get('module_enhanced_options')['text'][$this->config->get('config_language_id')]['free'];
+										$value_description = $text['free_option'];
 									}
 								}
 							}
