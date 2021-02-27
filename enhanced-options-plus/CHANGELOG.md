@@ -1,6 +1,9 @@
 # Change log
 
 ## [1.4.0] - 2021-02-26:
+### Fixed
+- Notices for free and preorder options
+- Minor fixes
 ### Internal
 - Rearranged events and functions
 
