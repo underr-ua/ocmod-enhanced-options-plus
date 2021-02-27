@@ -33,7 +33,7 @@ code package and also available on the project page: https://git.io/JtVdv.
 									$value_description = $option['price_prefix'] === '=' ? $value_description : $option['price_prefix'] . $value_description;
 
 									if (0 == $option['quantity'] && !$option['subtract']) {
-										$value_description .= $text['preordered_option'];
+										$value_description .= $text['preorder_option'];
 									}
 								} else {
 									if ('=' === $option['price_prefix']) {
@@ -80,7 +80,7 @@ code package and also available on the project page: https://git.io/JtVdv.
 									$value_description = $option['price_prefix'] === '=' ? $value_description : $option['price_prefix'] . $value_description;
 
 									if (0 == $option['quantity'] && !$option['subtract']) {
-										$value_description .= $text['preordered_option'];
+										$value_description .= $text['preorder_option'];
 									}
 								} else {
 									if ('=' === $option['price_prefix']) {

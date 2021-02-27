@@ -35,7 +35,7 @@ code package and also available on the project page: https://git.io/JTScM.
 
 
 									if (0 == $option['quantity'] && !$option['subtract']) {
-										$value_description .= $text['preordered_option'];
+										$value_description .= $text['preorder_option'];
 									}
 								} else {
 									if ('=' === $option['price_prefix']) {
