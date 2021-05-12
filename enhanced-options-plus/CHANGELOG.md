@@ -1,5 +1,9 @@
 # Change log
 
+## [1.4.1] - 2021-05-12:
+### Internal
+- Internals improvements
+
 ## [1.4.0] - 2021-02-26:
 ### Fixed
 - Notices for free and preorder options
