@@ -8,4 +8,4 @@ The Enhanced Points is an add-on for Enhanced Options+ module. It allows to appl
 * OCMOD - does not change core files
 
 ## License
-* [MIT License](https://git.io/JTScM)
+* [MIT License](https://raw.githubusercontent.com/ocmod-space/ocmod-enhanced-options/master/addons/points/LICENSE.txt)
